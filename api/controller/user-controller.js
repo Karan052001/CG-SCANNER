@@ -14,10 +14,10 @@ export const getScans = async (request, response) => {
 export const addScan = async (request, response) => {
     const scan = request.body;
     console.log(scan)
-    const newUser = new Scan(scan);
+    const newScan = new Scan(scan);
     try{
-        await newUser.save();
-        response.status(201).json(newUser);
+        await newScan.save();
+        response.status(201).json(newScan);
     } catch (error){
         response.status(409).json({ message: error.message});     
     }
